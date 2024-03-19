@@ -34,6 +34,7 @@ struct NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(SupportBubble.shared.clientToken)", forHTTPHeaderField: "Authorization")
         request.httpBody = data
         
         // Perform the network request

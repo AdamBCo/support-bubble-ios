@@ -3,6 +3,9 @@ public class SupportBubble {
     
     public static let shared = SupportBubble()
     
+    var clientID: String = ""
+    var clientToken: String = ""
+    
     public func register(name: String, email: String) {
         print("register")
     }

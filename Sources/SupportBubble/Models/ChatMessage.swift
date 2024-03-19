@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ChatMessage: Identifiable {
+public struct ChatMessage: Identifiable, Decodable {
     public let id: String
     public let message: String?
 }

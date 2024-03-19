@@ -7,9 +7,16 @@
 
 import Foundation
 
-public struct Ticket: Identifiable {
+public struct Ticket: Identifiable, Decodable {
     public let id: String
     public let clientID: String
     public let customerID: String
     public let lastMessage: String?
+}
+
+extension Ticket: Hashable {
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
