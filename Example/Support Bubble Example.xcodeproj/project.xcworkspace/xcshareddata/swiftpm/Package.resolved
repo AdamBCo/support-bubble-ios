@@ -1,0 +1,15 @@
+{
+  "originHash" : "c4a4a6f6c0ef788856a0282bc4caff8559bc38f85a3819487c9acb38141e3bf7",
+  "pins" : [
+    {
+      "identity" : "support-bubble-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AdamBCo/support-bubble-ios",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d791858a4b9d209a345503516dbec30d3af68875"
+      }
+    }
+  ],
+  "version" : 3
+}

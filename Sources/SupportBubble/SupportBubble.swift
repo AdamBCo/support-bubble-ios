@@ -1,17 +1,17 @@
 
-class SupportBubble {
+public class SupportBubble {
     
-    static let shared = SupportBubble()
+    public static let shared = SupportBubble()
     
-    func register(name: String, email: String) {
+    public func register(name: String, email: String) {
         print("register")
     }
     
-    func showTicketsView() {
+    public func showTicketsView() {
         print("showTicketsView")
     }
     
-    func showTicket(_ ticketID: String) {
+    public func showTicket(_ ticketID: String) {
         print("showTicket")
     }
 }

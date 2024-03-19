@@ -5,6 +5,7 @@
 //  Created by Adam Cooper on 3/19/24.
 //
 
+import SupportBubble
 import SwiftUI
 
 struct ContentView: View {
@@ -14,6 +15,13 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+            
+            NavigationLink {
+                Tickets
+            } label: {
+                <#code#>
+            }
+
         }
         .padding()
     }
