@@ -11,7 +11,10 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        TicketsListView()
+        
+        NavigationLink(destination: TicketsListView()) {
+            Text("Show Tickets")
+        }
     }
 }
 

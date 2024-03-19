@@ -11,7 +11,9 @@ import SwiftUI
 struct Support_Bubble_ExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
         }
     }
 }

@@ -10,26 +10,24 @@ struct RegisterView: View {
     @State private var alertMessage: String = ""
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("User Information")) {
-                    TextField("Name", text: $name)
-                    TextField("Username", text: $username)
+        Form {
+            Section(header: Text("User Information")) {
+                TextField("Name", text: $name)
+                TextField("Username", text: $username)
+            }
+            
+            Section {
+                Button(action: {
+                    registerUser()
+                }) {
+                    Text(isRegistering ? "Registering..." : "Register")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
                 }
-                
-                Section {
-                    Button(action: {
-                        registerUser()
-                    }) {
-                        Text(isRegistering ? "Registering..." : "Register")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                    }
-                    .disabled(isRegistering)
-                    .padding()
-                    .background(isRegistering ? Color.gray : Color.blue)
-                    .cornerRadius(8)
-                }
+                .disabled(isRegistering)
+                .padding()
+                .background(isRegistering ? Color.gray : Color.blue)
+                .cornerRadius(8)
             }
         }
         .alert(isPresented: $showAlert) {
