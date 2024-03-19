@@ -11,7 +11,7 @@
 		873A8D9D2BA9DFE100CD5E24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A8D9C2BA9DFE100CD5E24 /* ContentView.swift */; };
 		873A8D9F2BA9DFE200CD5E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873A8D9E2BA9DFE200CD5E24 /* Assets.xcassets */; };
 		873A8DA32BA9DFE200CD5E24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873A8DA22BA9DFE200CD5E24 /* Preview Assets.xcassets */; };
-		873A8DAB2BA9E07A00CD5E24 /* SupportBubble in Frameworks */ = {isa = PBXBuildFile; productRef = 873A8DAA2BA9E07A00CD5E24 /* SupportBubble */; };
+		873A8DAE2BA9E3FC00CD5E24 /* SupportBubble in Frameworks */ = {isa = PBXBuildFile; productRef = 873A8DAD2BA9E3FC00CD5E24 /* SupportBubble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873A8DAB2BA9E07A00CD5E24 /* SupportBubble in Frameworks */,
+				873A8DAE2BA9E3FC00CD5E24 /* SupportBubble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			);
 			name = "Support Bubble Example";
 			packageProductDependencies = (
-				873A8DAA2BA9E07A00CD5E24 /* SupportBubble */,
+				873A8DAD2BA9E3FC00CD5E24 /* SupportBubble */,
 			);
 			productName = "Support Bubble Example";
 			productReference = 873A8D972BA9DFE100CD5E24 /* Support Bubble Example.app */;
@@ -119,7 +119,7 @@
 			);
 			mainGroup = 873A8D8E2BA9DFE100CD5E24;
 			packageReferences = (
-				873A8DA92BA9E07A00CD5E24 /* XCRemoteSwiftPackageReference "support-bubble-ios" */,
+				873A8DAC2BA9E3FC00CD5E24 /* XCRemoteSwiftPackageReference "support-bubble-ios" */,
 			);
 			productRefGroup = 873A8D982BA9DFE100CD5E24 /* Products */;
 			projectDirPath = "";
@@ -369,7 +369,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		873A8DA92BA9E07A00CD5E24 /* XCRemoteSwiftPackageReference "support-bubble-ios" */ = {
+		873A8DAC2BA9E3FC00CD5E24 /* XCRemoteSwiftPackageReference "support-bubble-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AdamBCo/support-bubble-ios";
 			requirement = {
@@ -380,9 +380,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		873A8DAA2BA9E07A00CD5E24 /* SupportBubble */ = {
+		873A8DAD2BA9E3FC00CD5E24 /* SupportBubble */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 873A8DA92BA9E07A00CD5E24 /* XCRemoteSwiftPackageReference "support-bubble-ios" */;
+			package = 873A8DAC2BA9E3FC00CD5E24 /* XCRemoteSwiftPackageReference "support-bubble-ios" */;
 			productName = SupportBubble;
 		};
 /* End XCSwiftPackageProductDependency section */

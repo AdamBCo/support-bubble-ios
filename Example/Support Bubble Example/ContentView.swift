@@ -10,20 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            
-            NavigationLink {
-                Tickets
-            } label: {
-                <#code#>
-            }
-
-        }
-        .padding()
+        TicketsListView()
     }
 }
 
