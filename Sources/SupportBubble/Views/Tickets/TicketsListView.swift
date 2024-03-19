@@ -26,6 +26,7 @@ public struct TicketsListView: View {
         .task {
             try? await viewModel.loadTickets()
         }
+        .navigationTitle("Tickets")
         .navigationDestination(for: Ticket.self) { ticket in
             TicketDetailView(id: ticket.id)
         }
