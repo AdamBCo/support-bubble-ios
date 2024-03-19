@@ -23,7 +23,7 @@ class TicketDetailViewModel: ObservableObject {
             message: message,
             ticketID: id
         )
-        let message: ChatMessage = try await NetworkManager.shared.postRequest(path: "messages", data: <#T##Encodable#>)
+        let message: ChatMessage = try await NetworkManager.shared.postRequest(path: "messages", data: request)
         messages.append(message)
     }
 }
