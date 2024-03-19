@@ -8,8 +8,8 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-struct TicketsListView: View {
-    var body: some View {
+public struct TicketsListView: View {
+    public var body: some View {
         Text("TicketsListView")
     }
 }
