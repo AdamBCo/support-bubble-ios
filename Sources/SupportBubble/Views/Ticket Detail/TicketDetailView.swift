@@ -48,8 +48,12 @@ struct TicketDetailView: View {
     private func sendMessage() {
         if !newMessage.isEmpty {
             Task {
-                try await viewModel.sendMessage(message: newMessage)
-                newMessage = ""
+                do {
+                    try await viewModel.sendMessage(message: newMessage)
+                    newMessage = ""
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
