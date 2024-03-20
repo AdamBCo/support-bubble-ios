@@ -26,8 +26,12 @@ class TicketDetailViewModel: ObservableObject {
     
     func sendMessage(message: String) async throws {
         let clientID = SupportBubble.shared.clientID
-        let request = ChatMessageRequest(clientID: clientID, message: message, ticketID: id)
-        let json = try JSONEncoder().encode(request)
-        SocketClient.manager.defaultSocket.emit("chat message", json)
+//        let request = ChatMessageRequest(clientID: clientID, message: message, ticketID: id)
+//        let json = try JSONEncoder().encode(request)
+        SocketClient.manager.defaultSocket.emit("chat message", [
+            "clientID": clientID,
+            "message": message,
+            "ticketID": id
+        ])
     }
 }
