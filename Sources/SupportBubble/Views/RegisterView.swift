@@ -54,6 +54,8 @@ struct RegisterView: View {
                     path: "customers",
                     data: registerData
                 )
+                SupportBubble.userID = response.id
+                SupportBubble.userToken = response.token
                 token = response.token
             } catch {
                 alertMessage = "Registration failed: \(error.localizedDescription)"
