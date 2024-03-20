@@ -14,11 +14,8 @@ struct TicketDetailView: View {
             ScrollView {
                 ScrollViewReader { value in
                     VStack(alignment: .leading, spacing: 10) {
-                        ForEach(viewModel.messages, id: \.id) { message in
-                            Text(message.message ?? "")
-                                .padding()
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(10)
+                        ForEach(viewModel.messages, id: \.id) { chatMessage in
+                            ChatMessageView(chatMessage: chatMessage)
                         }
                     }
                     .padding()
