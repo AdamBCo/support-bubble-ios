@@ -18,19 +18,21 @@ public struct TicketsListView: View {
     }
     
     public var body: some View {
-        List(viewModel.tickets) { ticket in
-            NavigationLink(value: ticket) {
-                Text(ticket.lastMessage ?? ticket.id)
+        NavigationStack {
+            List(viewModel.tickets) { ticket in
+                NavigationLink(value: ticket) {
+                    Text(ticket.lastMessage ?? ticket.id)
+                }
             }
-        }
-        .task {
-            do  {
-                try await viewModel.loadTickets()
-            } catch {
-                print(error.localizedDescription)
+            .task {
+                do  {
+                    try await viewModel.loadTickets()
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
+            .navigationTitle("Tickets")
         }
-        .navigationTitle("Tickets")
         .navigationDestination(for: Ticket.self) { ticket in
             TicketDetailView(id: ticket.id)
         }
