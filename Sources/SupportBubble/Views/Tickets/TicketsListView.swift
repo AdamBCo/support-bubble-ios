@@ -11,11 +11,6 @@ import SwiftUI
 public struct TicketsListView: View {
     
     @ObservedObject var viewModel = TicketListViewModel()
-
-    
-    public init() {
-        SocketClient.connect()
-    }
     
     public var body: some View {
         NavigationStack {
@@ -34,6 +29,9 @@ public struct TicketsListView: View {
             .navigationTitle("Tickets")
             .navigationDestination(for: Ticket.self) { ticket in
                 TicketDetailView(id: ticket.id)
+            }
+            .onAppear {
+                SocketClient.connect()
             }
         }
         .modifier(AuthModifier())

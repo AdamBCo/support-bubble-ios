@@ -2,12 +2,30 @@
   "originHash" : "c4a4a6f6c0ef788856a0282bc4caff8559bc38f85a3819487c9acb38141e3bf7",
   "pins" : [
     {
+      "identity" : "socket.io-client-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/socketio/socket.io-client-swift",
+      "state" : {
+        "revision" : "175da8b5156f6b132436f0676cc84c2f6a766b6e",
+        "version" : "16.1.0"
+      }
+    },
+    {
+      "identity" : "starscream",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daltoniam/Starscream",
+      "state" : {
+        "revision" : "ac6c0fc9da221873e01bd1a0d4818498a71eef33",
+        "version" : "4.0.6"
+      }
+    },
+    {
       "identity" : "support-bubble-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AdamBCo/support-bubble-ios",
       "state" : {
         "branch" : "main",
-        "revision" : "86e83bbe0901a9a2007f4a51d4742f1301e2913f"
+        "revision" : "3fa148e6eae90e4987d1852d904f983105739654"
       }
     }
   ],
