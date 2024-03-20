@@ -24,7 +24,11 @@ public struct TicketsListView: View {
             }
         }
         .task {
-            try? await viewModel.loadTickets()
+            do  {
+                try await viewModel.loadTickets()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
         .navigationTitle("Tickets")
         .navigationDestination(for: Ticket.self) { ticket in
