@@ -1,11 +1,12 @@
 import Foundation
 
-struct ChatMessageRequest: Encodable {
-    let clientID: String
-    let message: String
-    let ticketID: String
+public struct ChatMessageRequest: Encodable {
     
-    public init(clientID: String, message: String, ticketID: String) {
+    public let clientID: String
+    public let message: String
+    public let ticketID: Ticket.ID
+    
+    public init(clientID: String, message: String, ticketID: Ticket.ID) {
         self.clientID = clientID
         self.message = message
         self.ticketID = ticketID
