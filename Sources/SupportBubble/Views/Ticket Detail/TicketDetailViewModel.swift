@@ -17,7 +17,7 @@ class TicketDetailViewModel: ObservableObject {
     func listenToSocketEvents() {
         SocketClient.manager.defaultSocket.on("ticket-\(id):messages") { data, emitter in
             if let dat = try? JSONSerialization.data(withJSONObject:data) {
-                if let chatMessage = try? JSONDecoder().decode(ChatMessage.self,from:dat) {
+                if let chatMessage = try? JSONDecoder().decode([ChatMessage].self,from:dat).first {
                     self.messages.append(chatMessage)
                 }
             }
