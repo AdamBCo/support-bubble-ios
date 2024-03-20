@@ -1,8 +1,9 @@
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 struct RegisterView: View {
     
+    @AppStorage("token") private var token: String?
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var isRegistering: Bool = false
@@ -13,7 +14,9 @@ struct RegisterView: View {
         Form {
             Section(header: Text("User Information")) {
                 TextField("Name", text: $name)
-                TextField("Username", text: $email)
+                    .textContentType(.name)
+                TextField("Email", text: $email)
+                    .textContentType(.emailAddress)
             }
             
             Section {
@@ -51,13 +54,12 @@ struct RegisterView: View {
                     path: "customers",
                     data: registerData
                 )
-                print("TOKEN: ", response.token)
-                alertMessage = "Registration successful!"
+                token = response.token
             } catch {
                 alertMessage = "Registration failed: \(error.localizedDescription)"
+                showAlert = true
             }
             isRegistering = false
-            showAlert = true
         }
     }
 }
