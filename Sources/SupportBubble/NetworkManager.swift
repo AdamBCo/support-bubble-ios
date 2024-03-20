@@ -5,14 +5,15 @@
 //  Created by Adam Cooper on 3/19/24.
 //
 
-import Foundation
+import SwiftUI
 
-@available(iOS 13.0.0, *)
+@available(iOS 14.0.0, *)
 struct NetworkManager {
     
     static let shared = NetworkManager()
     
     let baseURL = URL(string: "https://supportbubble-d48d6b6f228d.herokuapp.com/api/v1")!
+    @AppStorage("token") private var token: String?
     
     // Generic method to perform a request
     private func performRequest<T: Decodable>(
@@ -34,7 +35,11 @@ struct NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(SupportBubble.shared.clientToken)", forHTTPHeaderField: "Authorization")
+        if let token = token {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        } else {
+            request.addValue("Bearer \(SupportBubble.shared.clientToken)", forHTTPHeaderField: "Authorization")
+        }
         request.httpBody = data
         
         // Perform the network request
