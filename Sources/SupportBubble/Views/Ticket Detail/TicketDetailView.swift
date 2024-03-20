@@ -5,7 +5,6 @@ struct TicketDetailView: View {
     @ObservedObject var viewModel: TicketDetailViewModel
     @State private var newMessage: String = ""
     @State private var isNearBottom = true // To check if the user is near the bottom
-    @FocusState private var isInputFieldFocused: Bool
     
     init(id: Ticket.ID) {
         self.viewModel = TicketDetailViewModel(id: id)
@@ -38,9 +37,6 @@ struct TicketDetailView: View {
                     }
                 }
             }
-            .onAppear {
-                isInputFieldFocused = true // Focus the TextField when the view appears
-            }
             .coordinateSpace(name: "scrollViewSpace")
             .onPreferenceChange(ScrollPreferenceKey.self) { value in
                 isNearBottom = value.isNearBottom
@@ -49,7 +45,6 @@ struct TicketDetailView: View {
             HStack {
                 TextField("Enter message...", text: $newMessage)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .focused($isInputFieldFocused) // Bind the focus state to TextField
                     
                 Button(action: sendMessage) {
                     Text("Send")
@@ -60,7 +55,7 @@ struct TicketDetailView: View {
             try? await viewModel.loadMessages()
         }
         .onTapGesture {
-            isInputFieldFocused = false // Dismiss keyboard on tap outside
+            hideKeyboard()
         }
     }
     
@@ -70,7 +65,6 @@ struct TicketDetailView: View {
                 do {
                     try await viewModel.sendMessage(message: newMessage)
                     newMessage = ""
-                    isInputFieldFocused = true // Refocus on the TextField after sending
                 } catch {
                     print(error.localizedDescription)
                 }
