@@ -45,6 +45,10 @@ struct NetworkManager {
         // Perform the network request
         let (responseData, response) = try await URLSession.shared.data(for: request)
         
+        if let json = try? JSONSerialization.jsonObject(with: responseData, options: []) {
+            print("JSON: ", json)
+        }
+        
         // Check the response code
         guard let httpResponse = response as? HTTPURLResponse, 200...299 ~= httpResponse.statusCode else {
             throw URLError(.badServerResponse)
