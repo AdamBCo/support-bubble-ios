@@ -32,9 +32,9 @@ public struct TicketsListView: View {
                 }
             }
             .navigationTitle("Tickets")
-        }
-        .navigationDestination(for: Ticket.self) { ticket in
-            TicketDetailView(id: ticket.id)
+            .navigationDestination(for: Ticket.self) { ticket in
+                TicketDetailView(id: ticket.id)
+            }
         }
         .modifier(AuthModifier())
     }
