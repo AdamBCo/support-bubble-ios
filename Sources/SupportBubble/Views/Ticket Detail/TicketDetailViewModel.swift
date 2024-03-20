@@ -11,6 +11,13 @@ class TicketDetailViewModel: ObservableObject {
     
     init(id: Ticket.ID) {
         self.id = id
+        listenToSocketEvents()
+    }
+    
+    func listenToSocketEvents() {
+        SocketClient.manager.defaultSocket.on("ticket-\(id):messages") { data, emitter in
+            print("TICKET_MESSAGE: ", data)
+        }
     }
     
     func loadMessages() async throws {

@@ -14,7 +14,7 @@ public struct TicketsListView: View {
 
     
     public init() {
-        
+        SocketClient.connect()
     }
     
     public var body: some View {
