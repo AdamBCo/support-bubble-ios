@@ -19,9 +19,7 @@ class SocketClient {
         }
         manager.defaultSocket.connect(
             withPayload: [
-                "auth": [
-                    "token": token
-                ]
+                "token": token
             ]
         )
     }
