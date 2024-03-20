@@ -10,11 +10,14 @@ struct ChatMessageView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(chatMessage.message ?? "Unknown")
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(chatMessage.message ?? "Unknown")
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(10)
+            }
+            Spacer()
         }
     }
 }
