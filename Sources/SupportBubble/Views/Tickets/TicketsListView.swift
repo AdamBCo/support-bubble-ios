@@ -12,6 +12,9 @@ public struct TicketsListView: View {
     
     @ObservedObject var viewModel = TicketListViewModel()
     
+    public init() {
+    }
+    
     public var body: some View {
         NavigationStack {
             List(viewModel.tickets) { ticket in
