@@ -4,7 +4,7 @@ import SwiftUI
 struct RegisterView: View {
     
     @State private var name: String = ""
-    @State private var username: String = ""
+    @State private var email: String = ""
     @State private var isRegistering: Bool = false
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
@@ -13,7 +13,7 @@ struct RegisterView: View {
         Form {
             Section(header: Text("User Information")) {
                 TextField("Name", text: $name)
-                TextField("Username", text: $username)
+                TextField("Username", text: $email)
             }
             
             Section {
@@ -36,18 +36,21 @@ struct RegisterView: View {
     }
     
     func registerUser() {
-        guard !name.isEmpty, !username.isEmpty else {
+        guard !name.isEmpty, !email.isEmpty else {
             alertMessage = "Please fill in all fields."
             showAlert = true
             return
         }
         
         isRegistering = true
-        let registerData = RegisterRequest(name: name, username: username)
+        let registerData = RegisterRequest(name: name, email: email)
         
         Task {
             do {
-                let response: RegisterResponse = try await NetworkManager.shared.postRequest(path: "customers", data: registerData)
+                let response: RegisterResponse = try await NetworkManager.shared.postRequest(
+                    path: "customers",
+                    data: registerData
+                )
                 print("TOKEN: ", response.token)
                 alertMessage = "Registration successful!"
             } catch {

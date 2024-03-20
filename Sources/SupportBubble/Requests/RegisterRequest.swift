@@ -9,5 +9,5 @@ import Foundation
 
 public struct RegisterRequest: Encodable {
     public let name: String
-    public let username: String
+    public let email: String
 }
