@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 14.0.0, *)
+@available(iOS 16.0.0, *)
 struct NetworkManager {
     
     static let shared = NetworkManager()

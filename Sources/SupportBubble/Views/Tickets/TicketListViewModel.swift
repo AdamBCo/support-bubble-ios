@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-@available(iOS 14.0, *)
+@available(iOS 16.0, *)
 class TicketListViewModel: ObservableObject {
     
     @Published var tickets: [Ticket] = []

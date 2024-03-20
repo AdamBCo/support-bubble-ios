@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         Button(action: {
-            SupportBubble.shared.pressen()
+            SupportBubble.shared.showTicketsView()
         }, label: {
             Text("Show Tickets")
         })

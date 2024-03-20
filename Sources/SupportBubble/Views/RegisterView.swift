@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 14.0, *)
+@available(iOS 16.0, *)
 struct RegisterView: View {
     
     @AppStorage("token") private var token: String?
