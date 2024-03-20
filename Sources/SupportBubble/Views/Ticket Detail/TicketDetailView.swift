@@ -23,11 +23,11 @@ struct TicketDetailView: View {
                     .padding()
                     .onChange(of: viewModel.messages.count) { _ in
                         // Scroll only if isNearBottom is true
-                        if isNearBottom {
+//                        if isNearBottom {
                             withAnimation {
                                 value.scrollTo(viewModel.messages.last?.id, anchor: .bottom)
                             }
-                        }
+//                        }
                     }
                     // Track the scroll position to update isNearBottom
                     .onAppear {
