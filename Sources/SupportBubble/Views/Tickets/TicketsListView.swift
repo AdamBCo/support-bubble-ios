@@ -30,5 +30,6 @@ public struct TicketsListView: View {
         .navigationDestination(for: Ticket.self) { ticket in
             TicketDetailView(id: ticket.id)
         }
+        .modifier(AuthModifier())
     }
 }
