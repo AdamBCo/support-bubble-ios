@@ -9,5 +9,7 @@ import Foundation
 
 public struct ChatMessage: Identifiable, Decodable {
     public let id: String
+    public let clientID: String
     public let message: String?
+    public let ticketID: String
 }
