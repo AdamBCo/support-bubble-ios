@@ -36,7 +36,18 @@ public class SupportBubble {
     }
     
     public func showTicketsView() {
-        print("showTicketsView")
+        // Assuming TicketsScreen conforms to View
+        let ticketsView = TicketsListView()
+        let hostingController = UIHostingController(rootView: ticketsView)
+        
+        // Ensure we're on the main thread since UI changes must be on the main thread
+        DispatchQueue.main.async {
+            if let topVC = self.topViewController() {
+                topVC.present(hostingController, animated: true, completion: nil)
+            } else {
+                print("Error: Could not find top view controller.")
+            }
+        }
     }
     
     public func showTicket(_ ticketID: String) {
@@ -57,21 +68,6 @@ public class SupportBubble {
             return topViewController(presented)
         }
         return base
-    }
-        
-    func presentTicketsScreen() {
-        // Assuming TicketsScreen conforms to View
-        let ticketsView = TicketsListView()
-        let hostingController = UIHostingController(rootView: ticketsView)
-        
-        // Ensure we're on the main thread since UI changes must be on the main thread
-        DispatchQueue.main.async {
-            if let topVC = self.topViewController() {
-                topVC.present(hostingController, animated: true, completion: nil)
-            } else {
-                print("Error: Could not find top view controller.")
-            }
-        }
     }
     
 }
